@@ -4,6 +4,7 @@ public class LandRover {
   private int xCoordinate;
   private int yCoordinate;
   private Orientation orientation;
+  private Coordinate coordinate;
 
   public LandRover(int xCoordinate, int yCoordinate, Orientation orientation) {
     this.xCoordinate = xCoordinate;
@@ -11,11 +12,20 @@ public class LandRover {
     this.orientation = orientation;
   }
 
+  public LandRover(Coordinate coordinate, Orientation orientation) {
+    this.coordinate = coordinate;
+    this.orientation = orientation;
+  }
+
   public int getXCoordinate() {
+    if (coordinate != null)
+      return coordinate.getXCoordinate();
     return xCoordinate;
   }
 
   public int getYCoordinate() {
+    if (coordinate != null)
+      return coordinate.getYCoordinate();
     return yCoordinate;
   }
 
