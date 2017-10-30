@@ -8,14 +8,20 @@ public class LandRoverTest {
   @Test
   public void should_be_instantiable() throws Exception {
     // When
-    LandRover landRover = new LandRover(0);
+    LandRover landRover = new LandRover(0, 0);
     // Then
     assertThat(landRover).isNotNull();
   }
 
   @Test
   public void should_have_a_x_coordinate_when_initializing_with_x_coordinate() throws Exception {
-    LandRover landRover = new LandRover(23);
+    LandRover landRover = new LandRover(23, 0);
     assertThat(landRover.getXCoordinate()).isEqualTo(23);
+  }
+
+  @Test
+  public void should_have_a_y_coordinate_when_initializing_with_y_coordinate() throws Exception {
+    LandRover landRover = new LandRover(23, 42);
+    assertThat(landRover.getYCoordinate()).isEqualTo(42);
   }
 }
