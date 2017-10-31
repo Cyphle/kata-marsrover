@@ -1,8 +1,8 @@
 package fr.marsrover.navigation;
 
 public class LandRover {
-  private Orientation orientation;
   private Coordinate coordinate;
+  private Orientation orientation;
 
   public LandRover(Coordinate coordinate, Orientation orientation) {
     this.coordinate = coordinate;
@@ -17,7 +17,7 @@ public class LandRover {
     return coordinate.getYCoordinate();
   }
 
-  public Orientation getOrientation() {
-    return orientation;
+  public Compass getCompass() {
+    return orientation.getCompass();
   }
 }
