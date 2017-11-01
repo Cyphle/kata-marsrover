@@ -1,9 +1,13 @@
 package fr.marsrover.navigation;
 
+import fr.marsrover.eventsourcing.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.time.LocalDateTime;
+import java.time.Month;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
@@ -11,7 +15,7 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class LandRoverHandlerTest {
   private final EventData EVENT_DATA = new EventData(new Coordinate(23, 42), new Orientation(Compass.NORTH));
-  private Event roverLanded = new Event();
+  private Event roverLanded = new Event(EventName.ROVER_LANDED, LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52));
   @Mock
   private EventFactory eventFactory;
   @Mock

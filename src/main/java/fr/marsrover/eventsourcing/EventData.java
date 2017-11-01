@@ -1,5 +1,7 @@
-package fr.marsrover.navigation;
+package fr.marsrover.eventsourcing;
 
+import fr.marsrover.navigation.Coordinate;
+import fr.marsrover.navigation.Orientation;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode

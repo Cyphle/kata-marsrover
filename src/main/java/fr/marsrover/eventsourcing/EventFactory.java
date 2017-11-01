@@ -1,8 +1,5 @@
-package fr.marsrover.navigation;
+package fr.marsrover.eventsourcing;
 
-/*
-EVENT FACTORE
- */
 public interface EventFactory {
   Event justNow(EventName eventName, EventData eventData);
 }
