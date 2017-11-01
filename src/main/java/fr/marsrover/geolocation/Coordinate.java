@@ -1,4 +1,4 @@
-package fr.marsrover.navigation;
+package fr.marsrover.geolocation;
 
 import lombok.EqualsAndHashCode;
 

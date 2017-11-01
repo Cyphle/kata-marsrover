@@ -1,8 +1,9 @@
 package fr.marsrover.eventsourcing;
 
+import fr.marsrover.geolocation.Location;
 import fr.marsrover.navigation.Compass;
-import fr.marsrover.navigation.Coordinate;
-import fr.marsrover.navigation.Orientation;
+import fr.marsrover.geolocation.Coordinate;
+import fr.marsrover.geolocation.Orientation;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -16,9 +17,9 @@ public class EventTest {
     Event event = new Event(
             EventName.ROVER_LANDED,
             LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52),
-            new LandedRoverEventPayload(new Coordinate(23, 42), new Orientation(Compass.NORTH)));
+            new LandedRoverEventPayload(new Location(new Coordinate(23, 42), new Orientation(Compass.NORTH))));
     assertThat(event.getName()).isEqualTo(EventName.ROVER_LANDED);
     assertThat(event.getReceivedDatetime()).isEqualTo(LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52));
-    assertThat(event.getPayload()).isEqualTo(new LandedRoverEventPayload(new Coordinate(23, 42), new Orientation(Compass.NORTH)));
+    assertThat(event.getPayload()).isEqualTo(new LandedRoverEventPayload(new Location(new Coordinate(23, 42), new Orientation(Compass.NORTH))));
   }
 }
