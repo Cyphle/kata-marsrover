@@ -1,5 +1,8 @@
 package fr.marsrover.navigation;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Orientation {
   private Compass compass;
 

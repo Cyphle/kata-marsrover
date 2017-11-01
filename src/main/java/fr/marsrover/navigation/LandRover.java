@@ -1,23 +1,31 @@
 package fr.marsrover.navigation;
 
 public class LandRover {
-  private Coordinate coordinate;
+  private Coordinate coordinates;
   private Orientation orientation;
 
-  public LandRover(Coordinate coordinate, Orientation orientation) {
-    this.coordinate = coordinate;
+  public LandRover(Coordinate coordinates, Orientation orientation) {
+    this.coordinates = coordinates;
     this.orientation = orientation;
   }
 
   public int getXCoordinate() {
-    return coordinate.getXCoordinate();
+    return coordinates.getXCoordinate();
   }
 
   public int getYCoordinate() {
-    return coordinate.getYCoordinate();
+    return coordinates.getYCoordinate();
   }
 
   public Compass getCompass() {
     return orientation.getCompass();
+  }
+
+  public Coordinate getCoordinates() {
+    return coordinates;
+  }
+
+  public Orientation getOrientation() {
+    return orientation;
   }
 }

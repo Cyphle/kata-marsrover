@@ -1,5 +1,5 @@
 package fr.marsrover.navigation;
 
 public enum Compass {
-  NORTH
+  NORTH, EAST, SOUTH, WEST
 }
