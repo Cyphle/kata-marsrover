@@ -5,7 +5,7 @@ import fr.marsrover.navigation.Orientation;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
-public class EventData {
+public class EventData extends EventPayload {
   private Coordinate coordinate;
   private Orientation orientation;
 

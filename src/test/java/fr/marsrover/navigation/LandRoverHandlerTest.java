@@ -15,7 +15,9 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class LandRoverHandlerTest {
   private final EventData EVENT_DATA = new EventData(new Coordinate(23, 42), new Orientation(Compass.NORTH));
-  private Event roverLanded = new Event(EventName.ROVER_LANDED, LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52));
+  private Event roverLanded = new Event(
+          EventName.ROVER_LANDED, LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52),
+          EVENT_DATA);
   @Mock
   private EventFactory eventFactory;
   @Mock
