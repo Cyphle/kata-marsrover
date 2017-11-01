@@ -1,6 +1,7 @@
 package fr.marsrover.navigation;
 
 import fr.marsrover.eventsourcing.*;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -14,24 +15,30 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LandRoverHandlerTest {
-  private final EventData EVENT_DATA = new EventData(new Coordinate(23, 42), new Orientation(Compass.NORTH));
-  private Event roverLanded = new Event(
-          EventName.ROVER_LANDED, LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52),
-          EVENT_DATA);
+  private final LandedRoverEventPayload EVENT_PAYLOAD = new LandedRoverEventPayload(new Coordinate(23, 42), new Orientation(Compass.NORTH));
+  private Event roverLandedEvent = new Event(
+          EventName.ROVER_LANDED,
+          LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52),
+          EVENT_PAYLOAD);
+
   @Mock
   private EventFactory eventFactory;
   @Mock
   private EventStore eventStore;
+  private LandRoverHandler handler;
 
+  @Before
+  public void setUp() throws Exception {
+    handler = new LandRoverHandler(eventFactory, eventStore);
+  }
   @Test
   public void should_store_landing_rover_at_given_coordinate() throws Exception {
-    LandRoverHandler handler = new LandRoverHandler(eventFactory, eventStore);
-    LandRover landRover = new LandRover(new Coordinate(23, 42), new Orientation(Compass.NORTH));
-
-    given(eventFactory.justNow(EventName.ROVER_LANDED, EVENT_DATA)).willReturn(roverLanded);
-
-    handler.handle(landRover);
-
-    verify(eventStore).log(roverLanded);
+    // Given a command
+    given(eventFactory.justNow(EventName.ROVER_LANDED, EVENT_PAYLOAD)).willReturn(roverLandedEvent);
+    LandRoverCommand landRoverCommand = new LandRoverCommand(new Coordinate(23, 42), new Orientation(Compass.NORTH));
+    // When handles it
+    handler.handle(landRoverCommand);
+    // Then emit event
+    verify(eventStore).log(roverLandedEvent);
   }
 }

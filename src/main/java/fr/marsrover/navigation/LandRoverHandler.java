@@ -11,10 +11,10 @@ public class LandRoverHandler {
     this.eventStore = eventStore;
   }
 
-  public void handle(LandRover landRover) {
+  public void handle(LandRoverCommand landRoverCommand) {
     Event roverLanded = eventFactory.justNow(
             EventName.ROVER_LANDED,
-            new EventData(landRover.getCoordinates(), landRover.getOrientation()));
+            new LandedRoverEventPayload(landRoverCommand.getCoordinates(), landRoverCommand.getOrientation()));
     eventStore.log(roverLanded);
   }
 }

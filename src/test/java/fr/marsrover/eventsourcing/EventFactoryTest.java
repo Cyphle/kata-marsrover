@@ -21,7 +21,7 @@ public class EventFactoryTest {
 
   @Test
   public void should_generate_event_with_something_happens() throws Exception {
-    EventData eventPayload = new EventData(new Coordinate(23, 42), new Orientation(Compass.NORTH));
+    LandedRoverEventPayload eventPayload = new LandedRoverEventPayload(new Coordinate(23, 42), new Orientation(Compass.NORTH));
     Event generatedEvent = eventFactory.justNow(EventName.ROVER_LANDED, eventPayload);
     assertThat(generatedEvent).isEqualTo(new Event(EventName.ROVER_LANDED, LocalDateTime.of(2017, Month.NOVEMBER, 1, 18, 52), eventPayload));
   }

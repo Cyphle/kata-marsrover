@@ -1,10 +1,10 @@
 package fr.marsrover.navigation;
 
-public class LandRover {
+public class LandRoverCommand {
   private Coordinate coordinates;
   private Orientation orientation;
 
-  public LandRover(Coordinate coordinates, Orientation orientation) {
+  public LandRoverCommand(Coordinate coordinates, Orientation orientation) {
     this.coordinates = coordinates;
     this.orientation = orientation;
   }

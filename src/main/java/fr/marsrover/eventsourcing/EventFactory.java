@@ -6,8 +6,8 @@ import java.time.Month;
 public class EventFactory {
   private DateService dateService = new DateService();
 
-  public Event justNow(EventName eventName, EventData eventData) {
-    return new Event(eventName, dateService.now(), eventData);
+  public Event justNow(EventName eventName, EventPayload eventPayload) {
+    return new Event(eventName, dateService.now(), eventPayload);
   }
 
   private class DateService {
