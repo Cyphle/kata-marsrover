@@ -1,8 +1,9 @@
 package fr.marsrover.location;
 
+import fr.marsrover.geolocation.Location;
 import fr.marsrover.navigation.Compass;
-import fr.marsrover.navigation.Coordinate;
-import fr.marsrover.navigation.Orientation;
+import fr.marsrover.geolocation.Coordinate;
+import fr.marsrover.geolocation.Orientation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

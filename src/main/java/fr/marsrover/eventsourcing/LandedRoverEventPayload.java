@@ -1,8 +1,6 @@
 package fr.marsrover.eventsourcing;
 
-import fr.marsrover.location.Location;
-import fr.marsrover.navigation.Coordinate;
-import fr.marsrover.navigation.Orientation;
+import fr.marsrover.geolocation.Location;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode

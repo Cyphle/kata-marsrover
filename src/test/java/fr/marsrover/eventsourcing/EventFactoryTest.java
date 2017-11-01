@@ -1,9 +1,9 @@
 package fr.marsrover.eventsourcing;
 
-import fr.marsrover.location.Location;
+import fr.marsrover.geolocation.Location;
 import fr.marsrover.navigation.Compass;
-import fr.marsrover.navigation.Coordinate;
-import fr.marsrover.navigation.Orientation;
+import fr.marsrover.geolocation.Coordinate;
+import fr.marsrover.geolocation.Orientation;
 import org.junit.Before;
 import org.junit.Test;
 

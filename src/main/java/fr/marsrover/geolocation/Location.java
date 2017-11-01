@@ -1,8 +1,6 @@
-package fr.marsrover.location;
+package fr.marsrover.geolocation;
 
 import fr.marsrover.navigation.Compass;
-import fr.marsrover.navigation.Coordinate;
-import fr.marsrover.navigation.Orientation;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode

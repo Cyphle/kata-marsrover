@@ -1,5 +1,7 @@
 package fr.marsrover.location;
 
+import fr.marsrover.geolocation.Location;
+
 public class LocateRoverHandler {
   private LocationFinder locationFinder;
 

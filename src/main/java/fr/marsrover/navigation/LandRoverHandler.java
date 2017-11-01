@@ -1,7 +1,7 @@
 package fr.marsrover.navigation;
 
 import fr.marsrover.eventsourcing.*;
-import fr.marsrover.location.Location;
+import fr.marsrover.geolocation.Location;
 
 public class LandRoverHandler {
   private EventFactory eventFactory;

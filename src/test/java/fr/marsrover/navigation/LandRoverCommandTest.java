@@ -1,6 +1,8 @@
 package fr.marsrover.navigation;
 
-import fr.marsrover.location.Location;
+import fr.marsrover.geolocation.Coordinate;
+import fr.marsrover.geolocation.Location;
+import fr.marsrover.geolocation.Orientation;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
