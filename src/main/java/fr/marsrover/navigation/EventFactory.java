@@ -3,6 +3,6 @@ package fr.marsrover.navigation;
 /*
 EVENT FACTORE
  */
-public interface AnEventHappened {
+public interface EventFactory {
   Event justNow(EventName eventName, EventData eventData);
 }

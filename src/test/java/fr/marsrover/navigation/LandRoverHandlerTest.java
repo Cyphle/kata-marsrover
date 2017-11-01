@@ -13,16 +13,16 @@ public class LandRoverHandlerTest {
   private final EventData EVENT_DATA = new EventData(new Coordinate(23, 42), new Orientation(Compass.NORTH));
   private Event roverLanded = new Event();
   @Mock
-  private AnEventHappened anEventHappened;
+  private EventFactory eventFactory;
   @Mock
   private EventStore eventStore;
 
   @Test
   public void should_store_landing_rover_at_given_coordinate() throws Exception {
-    LandRoverHandler handler = new LandRoverHandler(anEventHappened, eventStore);
+    LandRoverHandler handler = new LandRoverHandler(eventFactory, eventStore);
     LandRover landRover = new LandRover(new Coordinate(23, 42), new Orientation(Compass.NORTH));
 
-    given(anEventHappened.justNow(EventName.ROVER_LANDED, EVENT_DATA)).willReturn(roverLanded);
+    given(eventFactory.justNow(EventName.ROVER_LANDED, EVENT_DATA)).willReturn(roverLanded);
 
     handler.handle(landRover);
 
